@@ -1,27 +1,26 @@
-// global variables
+// $document.ready--- runs whenever the ROM is ready for JS
+$(document).ready(function (){
+    
+    // global variables//
+    var wins = 0;
+    var losses= 0;
+    var min =19;
+    var max = 120;
+    var userEnter = 0;
+    var totalScore = gameStart (min, max);
 
-//variable total score
-var min = 19
-var max = 120
+    //create function to randomize the totalscore number
+    function gameStart (min, max){
+        return Math.floor(Math.random() * (max-min +1) + min) ;
 
-// variable for image
-var crystalImg = $("crystal-image");
-// variable for numbers to choose from for the image
-var numbersCrystal = 0;
-
-// variable for wins
-var wins= 0;
-// variable for losses
-var losses= 0;
+    } $("total-score").text("Total Score is: " + totalScore);
 
 
-var totalScore = gameStart(min,max);
-// function to start the game with the randomizing of total score
-    function gameStart (min, max) {
-          return Math.floor(Math.random() * (max - min +1) + min);
-    }$(".total-score").text(totalScore);
 
-//function to start the game with the randomizing of crystal numbers
 
+
+
+
+});
 
 
