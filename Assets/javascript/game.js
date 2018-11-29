@@ -1,5 +1,5 @@
 // $document.ready--- runs whenever the ROM is ready for JS
-$(document).ready(function (){
+
     
     // global variables//
     var wins = 0;
@@ -9,18 +9,21 @@ $(document).ready(function (){
     var userEnter = 0;
     var totalScore = gameStart (min, max);
 
+    console.log (wins,losses,min,max,userEnter,totalScore);
+
     // create  global variables for the randomized image values
 
     var imgUno = Math.floor(Math.random() * 12) +1;
     var imgDos = Math.floor(Math.random() * 12) +1;
     var imgTres = Math.floor(Math.random() * 12) +1;
-    var imgQuat = Math.floor(Math.random() * 12) +1;
+    var imgCuat = Math.floor(Math.random() * 12) +1;
 
     //create function to randomize the totalscore number
     function gameStart (min, max){
         return Math.floor(Math.random() * (max-min +1) + min) ;
-
-    } $("total-score").text("Total Score is: " + totalScore);
+    } $(".totalScore").text(totalScore);
+    console.log(gameStart);
+    console.log(totalScore);
 
     // restarting the game function= resets errrrrthang
     // total score is randomized again
@@ -28,32 +31,69 @@ $(document).ready(function (){
     // randomize the img values
     function restartGame () {
         totalScore = Math.floor(Math.random() * (max - min +1) +min);
-        $(".total-score").text("Total Score is: " + totalScore);
+        $(".totalScore").text("Total Score is: " + totalScore);
         userEnter = 0
-        $(".user-score").text("You're score is " + userEnter);
+        $(".userEnter").text("You're score is " + userEnter);
         var imgUno = Math.floor(Math.random() * 12) +1;
         var imgDos = Math.floor(Math.random() * 12) +1;
         var imgTres = Math.floor(Math.random() * 12) +1;
         var imgCuat = Math.floor(Math.random() * 12) +1;
+        console.log(totalScore);
+        console.log(imgUno, imgDos, imgTres, imgCuat);
+    }
+    // ===========================================================================
+
+        // now lets creates some alerts homie
+
+
+    // what if the player gets lucky and matches the total score
+    // wins increase by one
+    // alert that they have won
+    // restartGame
+    function allIDoIsWin () {
+        alert ("MY GUY, you is a genius!! ");
+        wins ++;
+        console.log(wins);
+        $(".win-count").text("Championship rings= " + wins);
+        restartGame();
+        console.log(restartGame);
     }
     
+    
+    
+    
+    // if players loses..like the loser they are
+    function sucksToLose () {
+        alert ("You LOSE. GO HOME!");
+        losses ++;
+        console.log(losses);
+        $(".loss-count").text("Sad Faces= " + losses);
+        restartGame();
+    }
+    // ======================================================================
+    var imgUno = Math.floor(Math.random() * 12) +1;
+    var imgDos = Math.floor(Math.random() * 12) +1;
+    var imgTres = Math.floor(Math.random() * 12) +1;
+    var imgCuat = Math.floor(Math.random() * 12) +1;
     // trouble in the path of excellance
     // first create value to the imgs so they can be pressed upon 
-    $("gameButton").val(imgUno, imgDos, imgTres, imgCuat);
+    $("#gameButton").val(imgUno, imgDos, imgTres, imgCuat);
+    console.log (imgUno, imgDos, imgTres, imgCuat);
+    console.log("#gamebutton");
 
     // moving on to the first img
     // make the img clickable
-    $("imageOne").click(function() {
+    $(".imageUno").click(function() {
         // once clicked we want the score it was assigned 
         // to be added to the users score
         userEnter += imgUno;
         // then i want this clicked value to be pushed onto the area 
         // of which the user score is at? my wording is off...
         $(this).attr({
-            "user-score": userEnter
+            ".userScore": userEnter
         });
         // call the div from html to print
-        $(".user-score").text(userEnter);
+        $(".userScore").text(userEnter);
 
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -68,17 +108,17 @@ $(document).ready(function (){
     // now repeat for the other images bro
 
     // imageTwo
-    $("imageTwo").click(function() {
+    $(".imageDos").click(function() {
         // once clicked we want the score it was assigned 
         // to be added to the users score
         userEnter += imgDos;
         // then i want this clicked value to be pushed onto the area 
         // of which the user score is at? my wording is off...
         $(this).attr({
-            "user-score": userEnter
+            ".userScore": userEnter
         });
         // call the div from html to print
-        $(".user-score").text(userEnter);
+        $(".userScore").text(userEnter);
 
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -92,17 +132,17 @@ $(document).ready(function (){
     })
 
     // imageThree
-    $("imageThree").click(function() {
+    $(".imageTres").click(function() {
          // once clicked we want the score it was assigned 
         // to be added to the users score
         userEnter += imgTres;
         // then i want this clicked value to be pushed onto the area 
         // of which the user score is at? my wording is off...
         $(this).attr({
-            "user-score": userEnter
+            ".userScore": userEnter
         });
         // call the div from html to print
-        $(".user-score").text(userEnter);
+        $(".userScore").text(userEnter);
 
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -116,7 +156,7 @@ $(document).ready(function (){
     })
 
     // imageFour
-    $("imageFour").click(function() {
+    $(".imageFour").click(function() {
          // once clicked we want the score it was assigned 
         // to be added to the users score
         userEnter += imgCuat;
@@ -137,38 +177,12 @@ $(document).ready(function (){
             else if (userEnter > totalScore) {
                 sucksToLose();
             }
-    })
+    });
 
-
-    
-    // what if the player gets lucky and matches the total score
-    // wins increase by one
-    // alert that they have won
-    // restartGame
-    function allIDoIsWin () {
-        alert ("MY GUY, you is a genius!! ");
-        wins ++;
-        $("win-count").text("Championship rings= " + wins);
-        restartGame();
-    }
-    
-    
-    
-    
-    // now lets creates some alerts homie
-    // if players loses..like the loser they are
-    function sucksToLose () {
-        alert ("You LOSE. GO HOME!");
-        losses ++;
-        $(".loss-count").text("Sad Faces= " + losses);
-        restartGame();
-    }
+    gameStart();
 
 
 
 
-
-
-});
 
 
