@@ -9,6 +9,9 @@ $(document).ready(function() {
     var max = 120;
     var userEnter = 0;
     var totalScore = gameStart (min, max);
+    var images = [
+        "image/thunder_thighs.png", "image/loser.jpg"
+    ];
     
     console.log (wins,losses,min,max,userEnter,totalScore);
     
@@ -22,7 +25,8 @@ $(document).ready(function() {
     //create function to randomize the totalscore number
     function gameStart (min, max){
         return Math.floor(Math.random() * (max-min +1) + min) ;
-    } $(".totalScore").text("Match Score: " + totalScore);
+    }        
+
     console.log(gameStart);
     console.log(totalScore);
     
@@ -70,6 +74,7 @@ $(document).ready(function() {
         console.log(losses);
         $(".loss-count").text("Sad Faces= " + losses);
         restartGame();
+       
     }
     // ======================================================================
     var imgUno = Math.floor(Math.random() * 12) +1;
@@ -94,7 +99,8 @@ $(document).ready(function() {
             "userEnter": userEnter
         });
         // call the div from html to print
-        $(".userEnter").text(userEnter);
+        $(".userEnter").text("Patty Count is " + userEnter);
+        $(".totalScore").text("Match Score: " + totalScore);
     
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -119,7 +125,9 @@ $(document).ready(function() {
             "userEnter": userEnter
         });
         // call the div from html to print
-        $(".userEnter").text(userEnter);
+        $(".userEnter").text("Patty Count is " + userEnter);
+        $(".totalScore").text("Match Score: " + totalScore);
+
     
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -143,7 +151,9 @@ $(document).ready(function() {
             "userEnter": userEnter
         });
         // call the div from html to print
-        $(".userEnter").text(userEnter);
+        $(".userEnter").text("Patty Count is " + userEnter);
+        $(".totalScore").text("Match Score: " + totalScore);
+
     
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -167,7 +177,9 @@ $(document).ready(function() {
             "userEnter": userEnter
         });
         // call the div from html to print
-        $(".userEnter").text(userEnter);
+        $(".userEnter").text("Patty Count is " + userEnter);
+        $(".totalScore").text("Match Score: " + totalScore);
+
     
         // if at any pt the users score matches the tallied score 
         // alert win win
