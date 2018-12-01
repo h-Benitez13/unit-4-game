@@ -25,7 +25,8 @@ $(document).ready(function() {
     //create function to randomize the totalscore number
     function gameStart (min, max){
         return Math.floor(Math.random() * (max-min +1) + min) ;
-    }        
+    } $(".totalScore").text("Match Score: " + totalScore);
+   
 
     console.log(gameStart);
     console.log(totalScore);
@@ -55,8 +56,13 @@ $(document).ready(function() {
     // wins increase by one
     // alert that they have won
     // restartGame
+        function displayImage() {
+            $("#imageholder").html("<img src=" + images + " width='400px'>");
+          }
     function allIDoIsWin () {
         alert ("MY GUY, you is a genius!! ");
+        $(".win-count").html("<img src= 'image/thunder_thighs.png' />");
+
         wins ++;
         console.log(wins);
         $(".win-count").text("Championship rings= " + wins);
@@ -100,7 +106,6 @@ $(document).ready(function() {
         });
         // call the div from html to print
         $(".userEnter").text("Patty Count is " + userEnter);
-        $(".totalScore").text("Match Score: " + totalScore);
     
         // if at any pt the users score matches the tallied score 
         // alert win win
@@ -126,7 +131,6 @@ $(document).ready(function() {
         });
         // call the div from html to print
         $(".userEnter").text("Patty Count is " + userEnter);
-        $(".totalScore").text("Match Score: " + totalScore);
 
     
         // if at any pt the users score matches the tallied score 
@@ -152,7 +156,6 @@ $(document).ready(function() {
         });
         // call the div from html to print
         $(".userEnter").text("Patty Count is " + userEnter);
-        $(".totalScore").text("Match Score: " + totalScore);
 
     
         // if at any pt the users score matches the tallied score 
@@ -178,7 +181,6 @@ $(document).ready(function() {
         });
         // call the div from html to print
         $(".userEnter").text("Patty Count is " + userEnter);
-        $(".totalScore").text("Match Score: " + totalScore);
 
     
         // if at any pt the users score matches the tallied score 
@@ -193,6 +195,7 @@ $(document).ready(function() {
     });
     
     gameStart();
+    displayImage();
 
 });
     
