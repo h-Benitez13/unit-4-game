@@ -65,7 +65,7 @@ $(document).ready(function() {
 
         wins ++;
         console.log(wins);
-        $(".win-count").text("Championship rings= " + wins);
+        $(".win-count").text("Wins: " + wins);
         restartGame();
         console.log(restartGame);
     }
@@ -78,7 +78,7 @@ $(document).ready(function() {
         alert ("You LOSE. GO HOME!");
         losses ++;
         console.log(losses);
-        $(".loss-count").text("Sad Faces= " + losses);
+        $(".loss-count").text("Losses: "+ losses);
         restartGame();
        
     }

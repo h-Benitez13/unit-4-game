@@ -2,7 +2,7 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Crystal Collector Game</title>
 
 
@@ -17,98 +17,135 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 titless">
-                <h1>
-                    Krabby Patty Eating Contest!!!
-                </h1>
-            </div>
-            <div class="col-md-12 instructions">
-                <p>HOW DO YOU PLAY, IM SO CONFUSED! </p>
-                <p>
-                    The goal of the game is to match the total score you see below.
-                    Click any krabby to increase your score.
+    <div class="jumbotron jumbotron-fluid ">
+        <div class="container">
+            <h1 class="display-4">Krabby Patty Eating Contest!!!</h1>
+            <h3 class="lead ">The game we all wanted to play while watching this show!</h3>
 
-                </p>
-
+            <div class="position-static row">
                 <p>
-                    Sounds easy right? Why would anyone make this silly, simple game?
-                    Should I have bagel bites tonight?
-                    ...Sorry about that but back to this wonderful game
+                    <a class="btn btn-dark" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        HOW DO I PLAY??
+                    </a>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <p>
+                            The goal of the game is to match the total score you see below.
+                            Click any krabby to increase your score.
 
-                </p>
-                <p>
-                    So what you don't know is the value of the krabby patty is random every new game,
-                    and you will never know off rip.
-                    The challenge is to keep track of the value of each krabby patty!
-                </p>
-                <p>
-                    NOW GO FORTH AND INDULGE IN KRABBY PATTIES!
-                    REMEMBER, IT GOES TO THE THIGHS FIRST....
-                </p>
-                <h3> AND THEN YOU EXPLODE!!!</h3>
+                        </p>
 
+                        <p>
+                            Sounds easy right? Why would anyone make this silly, simple game?
+                            Should I have bagel bites tonight?
+                            ...Sorry about that but back to this wonderful game
+
+                        </p>
+                        <p>
+                            So what you don't know is the value of the krabby patty is random every new
+                            game,
+                            and you will never know off rip.
+                            The challenge is to keep track of the value of each krabby patty!
+                        </p>
+                        <p>
+                            NOW GO FORTH AND INDULGE IN KRABBY PATTIES!
+                            REMEMBER, IT GOES TO THE THIGHS FIRST....
+                        </p>
+                        <h3> AND THEN YOU EXPLODE!!!</h3>
+                    </div>
+                </div>
             </div>
 
         </div>
-        <br>
-        <div class="row breakers">
-            <div class="col-md-6">
-                <h2 class=" totalScore"></h2>
+    </div>
+
+
+
+    <div class="container game">
+        <div class="row">
+
+            <div class="col-lg-4">
+
+                <div class="text-center bg-transparent alert alert-light" role="alert">
+                    <h2 class="totalScore"></h2>
+                </div>
             </div>
-                <div class="col-md-6 ">
+
+            <div class="col-lg-4">
+                <div class=" bg-transparent alert alert-light" role="alert">
                     <h2 class="userEnter">Look what I turn into!</h2>
                 </div>
             </div>
-        <div class="imageholder">
+            <div class="row">
+
+                <table class="col-md-2 table ">
+                    <thead class="thead-dark">
+                        <tr>
+
+                            <th scope="col">
+                                <h3>Wins/Losses</h3>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <h3 class="win-count">Wins: </h3>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <h3 class="loss-count">Losses:</h3>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="row imageRow">
+        </div>
 
 
-                <div class="col-md-4 imageUno">
-                    <button>
-                        <img src="Assets/image/blue_krabby.jpg" class="testes" />
-                    </button>
+
+
+
+
+        <div class="row first">
+            <div class="col-4 imageUno">
+                <div class="media">
+                    <img src="Assets/image/nasty_patty.jpeg" class="mr-3 imgbutton" alt="">
                 </div>
-                <br>
-                <div class="col-md-4 imageDos">
-                    <button>
-
-                        <img src="Assets/image/purple_patty.png" class="testes" />
-                    </button>
-                </div>
-                <br>
-                <div class="col-md-4 imageTres">
-                    <button>
-
-                        <img src="Assets/image/nasty_patty.jpeg" class="testes" />
-                    </button>
-                </div>
-                <br>
-                <div class="col-md-4 imageCuat">
-                    <button>
-
-                        <img src="Assets/image/OG_patty.png" class="testes" />
-                    </button>
-                </div>
-                <br>
             </div>
+
+            <div class="col-4 imageDos">
+                <div class="media">
+                    <img src="Assets/image/small.jpeg" class="mr-3 imgbutton" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <div class="row second">
+            <div class="col-4 imageTres">
+                <div class="media">
+                    <img src="Assets/image/squid.jpeg" class="mr-3 imgbutton" alt="...">
+                </div>
+
+            </div>
+
+            <div class="col-4 imageCuat">
+                <div class="media">
+                    <img src="Assets/image/blue_krabby.jpg" class="mr-3 imgbutton" alt="...">
+                </div>
+
+            </div>
+
+        </div>
 
 
         <br>
-       
 
-        <div class="row wins">
-            <div class="col-md-12 ">
-                <h3 class="win-count">No wins yet buddy</h3>
-            </div>
-        </div>
-        <div class="row loss">
-            <div class="col-md-12 ">
-                <h3 class="loss-count">Full life ahead of you</h3>
-            </div>
-        </div>
+
 
     </div>
 
@@ -121,7 +158,12 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
     <script src="Assets/javascript/game.js"></script>
 </body>
 
